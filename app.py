@@ -2,10 +2,10 @@ import requests
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
-
-
-#4e59b8b7f8f1176bf2ca692f5820a019
+script_dir = os.path.dirname(__file__)
+similarity_path = os.path.join(script_dir, 'similarity.pkl')
 
 def fetch_poster(movie_id):
     response = requests.get('https://api.themoviedb.org/3/movie/{}?api_key=4e59b8b7f8f1176bf2ca692f5820a019&language=en-US'.format(movie_id))
